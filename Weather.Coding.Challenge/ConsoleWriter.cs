@@ -15,9 +15,13 @@ namespace Weather.Coding.Challenge
 
         public static void PrintOutput(ServiceResponse response)
         {
-            if (response == null)
+            if (response == null) 
+            {
                 Console.WriteLine("Invalid zipcode provided");
-
+                ExitApplication();
+                return;
+            }
+                
             Console.WriteLine("Should I go outside?");
 
             Console.WriteLine(response.IsShouldGoOutSide ? "Yes" : "No");
